@@ -1,0 +1,163 @@
+body {
+    /* background-color: #f8f9fa; */
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.center, .center2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.center {
+  height: 15vh;
+}
+
+.center2 {
+  height: 60vh;
+}
+
+
+.mycontainer {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+  display: flex;
+  gap: 10px;
+  max-width: 800px; /* กำหนดความกว้างสูงสุด */
+  width: 100%;
+  flex-wrap: wrap; /* ให้ input ห่อบรรทัดใหม่ถ้าเต็ม */
+}
+
+h1, h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container-input {
+    display: flex;
+    flex-wrap: nowrap; /* จะบังคับให้อยู่บรรทัดเดียว */
+    gap: 10px; /* ระยะห่างระหว่างช่อง */
+    align-items: center; /* จัดให้อยู่ตรงกลางแนวดิ่ง */
+  }
+  
+  .form-container input {
+    flex: 1; /* ช่องกรอกข้อมูลจะขยายตามพื้นที่ว่าง */
+    min-width: 150px; /* ป้องกันช่องเล็กเกินไป */
+  }
+  
+  .form-container button {
+    padding: 10px 20px;
+  }
+
+  .effect {
+    transition: transform 0.3s ease;
+}
+
+.effect:hover{
+    transform: scale(1.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.edit-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.edit-table th,
+.edit-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.edit-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.edit-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table .btn {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+.menu-right {
+  text-align: right;
+  padding-right: 40px; /* ปรับตรงนี้ */
+  /* margin-right: 620px; */
+  /* margin-left: 620px; */
+}
+
+
+.menu-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-right li {
+  margin: 10px 0;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Management CRUD</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/effect .css"/>
+    <link rel="stylesheet" href="./css/margin_and_padding.css" />
+  </head>
+  <body>
+    <header data-bs-theme="dark">
+      <div class="navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a href="userShowData.html" class="navbar-brand d-flex align-items-center">
+            <strong>Database</strong>
+          </a>
+          <a href="userShowData.html" class="btn btn-dark effect">Home</a>
+          <!-- <a href="Input.html" class="btn btn-dark effect">Input</a> -->
+          <a href="editUser.html" class="btn btn-dark effect">Edit</a>
+          <a href="index.html" id="logoutBtn" class="btn btn-dark effect">logout</a>
+          <!-- <a href="Delete.html" class="btn btn-dark effect">Delete</a> -->
+        </div>
+      </div>
+    </header>
+    <div class="container py-4">
+      <h2>User Management</h2>
+
+      <form id="userForm" class="mb-4">
+        <input type="hidden" id="userId" />
+      </form>
+
+      <table class="table ">
+        <thead>
+          <tr>
+            <th class="text-center">No.</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th class="text-center">Age</th>
+            <th>Role</th>
+            <th>Recommend</th>
+            <th>Feature</th>
+            <th>Comments</th>
+          </tr>
+        </thead>
+        <tbody id="userTable"></tbody>
+      </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
+    <script src="./js/scriptUser.js"></script>
+    <script
+      defer
+      src="./js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    ></script>
+    <script>
+      document.getElementById("logoutBtn").addEventListener("click", function (e) {
+        e.preventDefault(); // ป้องกันการเปลี่ยนหน้าโดยทันที
+    
+        // ลบคุกกี้โดยตั้งวันหมดอายุในอดีต
+        document.cookie = "cookie_userid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "cookie_date_end=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    
+        // ไปที่หน้า login (index.html)
+        window.location.href = "index.html";
+      });
+    </script>
+  </body>
+</html>
