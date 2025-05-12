@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <title>โหวตนักร้อง</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url("/frontend/img/844163_0.jpg") center center/cover
+          no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .card {
+        position: relative;
+        width: 375px;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease;
+      }
+
+      .center-me {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .overlay {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100%;
+      }
+
+      .logo {
+        width: 150px;
+        margin-bottom: 10px;
+      }
+
+      .logo2 {
+        width: 80px;
+        margin-bottom: 20px;
+      }
+
+      .title {
+        font-size: 32px;
+        font-weight: bold;
+        color: #262262;
+      }
+
+      .subtitle {
+        color: #262262;
+        font-weight: bold;
+        margin-top: 5px;
+      }
+
+      .info {
+        margin: 8px 0;
+        color: #262262;
+        line-height: 1.4;
+      }
+
+      .button {
+        margin-top: 20px;
+        padding: 12px 0;
+        background-color: #4a90e2;
+        color: white;
+        border: none;
+        border-radius: 9999px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 80%;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+      }
+
+      .button:hover {
+        background-color: #367bd6;
+      }
+
+      .quote {
+        margin-top: 20px;
+        color: #262262;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container px-4 py-5">
+      <div class="card center-me text-center">
+        <center>
+          <img src="/frontend/img/Untitled-1.png" alt="MCS Logo" class="logo" />
+        </center>
+        <center>
+          <img src="/frontend/img/mcs.png" alt="MCS Logo 33" class="logo2" />
+        </center>
+        <div class="title">E15</div>
+        <div class="subtitle">0002380</div>
+        <div class="info">นายรัฐศาสตร์ รจนัย<br />แผนก ไอที</div>
+        <div class="info">อายุงาน 1 เดือน 9 วัน<br />วัน, เวลาเข้ากิจกรรม</div>
+        <center>
+          <a href="UserVote1.html" class="button btn">โหวตนักร้อง</a>
+        </center>
+        <div class="quote">
+          เพราะทุกวันต้องก้าวหน้ากว่าเมื่อวาน<br />"ด้วยความเชื่อถือ"
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
