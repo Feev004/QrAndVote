@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <title>QR Scan</title>
+  <!-- เปลี่ยนมาใช้ jsdelivr -->
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+</head>
+<body>
+  <div class="container text-center mt-5">
+    <h2>สแกน QR Code เข้าร่วมกิจกรรม</h2>
+    <div id="qr-reader" style="width: 1000px; margin: auto;"></div>
+    <p id="result" class="mt-3 text-success fs-4"></p>
+    <a href="UserVote1.html" class="btn btn-primary mt-3">โหวตนักร้อง</a>
+  </div>
+
+  <script>
+    function onScanSuccess(decodedText, decodedResult) {
+      document.getElementById("result").innerText = `QR Code: ${decodedText}`;
+      html5QrcodeScanner.clear();
+    }
+
+    function onScanFailure(error) {
+      console.warn(`QR scan error = ${error}`);
+    }
+
+    // ต้องใช้ชื่อคลาสตัวใหญ่ถูกต้อง Html5QrcodeScanner (สังเกต H ใหญ่)
+    const html5QrcodeScanner = new Html5QrcodeScanner(
+      "qr-reader",
+      { fps: 10, qrbox: 250 },
+      false
+    );
+    html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+  </script>
+</body>
+</html>

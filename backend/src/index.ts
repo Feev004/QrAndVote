@@ -10,5 +10,6 @@ app.use(express.json());
 
 app.use('/api/users', userRoutes);
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port http://localhost:${PORT}/api/users`));
+const PORT = process.env.PORT || 5500;
+app.listen(PORT, () => console.log(`Server running on port http://localhost:${PORT}/frontend/main.html`));
+// app.listen(PORT, () => console.log(`Server running on port http://localhost:${PORT}/`));

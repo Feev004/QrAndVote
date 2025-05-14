@@ -5,6 +5,8 @@ import { Sequelize } from "sequelize";
 const sequelize = new Sequelize("[MCSEVENTS]", "us_test", "ustest1234", {
   host: "192.168.201.142\\sqlexpress",
   dialect: "mssql",
+  // const_token = "ntn_b10296201043GsFXybAC9zgtsUe7SEPPravIZUzWsM7fhF",
+
   port: 1433,
   dialectOptions: {
     options: {
@@ -14,7 +16,7 @@ const sequelize = new Sequelize("[MCSEVENTS]", "us_test", "ustest1234", {
   },
   logging: false, // ปิด log SQL (เปิดได้ถ้า debug)
 });
-
+// export const _token = "2ZcYV3J4cnxNGLiA5QY2uAUzbWp_215sNqYSFHBshFVX7UB3T";
 export default sequelize;
 
 
