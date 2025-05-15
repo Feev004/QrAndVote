@@ -6,124 +6,133 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <title>Admin</title>
     <style>
-        body {
-          margin: 0;
-          font-family: Arial, sans-serif;
-          background: url("/frontend/img/test.jpg") center center/cover
-            no-repeat;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-        }
-  
-        .card-me {
-          position: relative;
-          /* width: 375px; */
-          border-radius: 10px;
-          overflow: hidden;
-          background-color: rgba(255, 255, 255, 0.8);
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-          transition: transform 0.3s ease;
-        }
-  
-        .overlay {
-          background-color: rgba(255, 255, 255, 0.9);
-          padding: 20px;
-          text-align: center;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          min-height: 100%;
-        }
-  
-        .logo {
-          width: 150px;
-          margin-bottom: 10px;
-        }
-  
-        .logo2 {
-          width: 80px;
-          margin-bottom: 20px;
-        }
-  
-        .title {
-          font-size: 32px;
-          font-weight: bold;
-          color: #262262;
-        }
-  
-        .subtitle {
-          color: #262262;
-          font-weight: bold;
-          margin-top: 5px;
-        }
-  
-        .info {
-          margin: 8px 0;
-          color: #262262;
-          line-height: 1.4;
-        }
-  
-        .button {
-          margin-top: 20px;
-          padding: 12px 0;
-          background-color: #4a90e2;
-          color: white;
-          border: none;
-          border-radius: 9999px;
-          cursor: pointer;
-          font-size: 16px;
-          width: 80%;
-          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-          transition: background-color 0.3s ease;
-        }
-  
-        .button:hover {
-          background-color: #367bd6;
-        }
-  
-        .quote {
-          margin-top: 20px;
-          color: #262262;
-          font-size: 14px;
-          line-height: 1.4;
-        }
-        .row-me {
-          --bs-gutter-x: 1.5rem;
-          --bs-gutter-y: 0;
-          display: flex;
-          flex-wrap: wrap;
-          margin-top: calc(-1 * var(--bs-gutter-y));
-          margin-right: calc(-0.5 * var(--bs-gutter-x));
-          margin-left: calc(-0.5 * var(--bs-gutter-x));
-        }
-  
-        .hitden-me {
-          overflow: hidden;
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0);
-          transition: transform 0.3s ease;
-        }
-  
-        .img55 {
-          width: 250px;
-          height: 300px;
-          object-fit: cover;
-          border-radius: 10px;
-        }
-  
-        .margin-me {
-          margin-top: 500px;
-        }
-      </style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url("/frontend/img/test.jpg") center center/cover no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .card-me {
+        position: relative;
+        /* width: 375px; */
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease;
+      }
+
+      .overlay {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100%;
+      }
+
+      .logo {
+        width: 150px;
+        margin-bottom: 10px;
+      }
+
+      .logo2 {
+        width: 80px;
+        margin-bottom: 20px;
+      }
+
+      .title {
+        font-size: 32px;
+        font-weight: bold;
+        color: #262262;
+      }
+
+      .subtitle {
+        color: #262262;
+        font-weight: bold;
+        margin-top: 5px;
+      }
+
+      .info {
+        margin: 8px 0;
+        color: #262262;
+        line-height: 1.4;
+      }
+
+      .button {
+        margin-top: 20px;
+        padding: 12px 0;
+        background-color: #4a90e2;
+        color: white;
+        border: none;
+        border-radius: 9999px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 80%;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+      }
+
+      .button:hover {
+        background-color: #367bd6;
+      }
+
+      .quote {
+        margin-top: 20px;
+        color: #262262;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+      .row-me {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(-1 * var(--bs-gutter-y));
+        margin-right: calc(-0.5 * var(--bs-gutter-x));
+        margin-left: calc(-0.5 * var(--bs-gutter-x));
+      }
+
+      .hitden-me {
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0);
+        transition: transform 0.3s ease;
+      }
+
+      .img55 {
+        width: 250px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .margin-me {
+        margin-top: 500px;
+      }
+    </style>
   </head>
   <body>
-    <a href="event.html" class="btn button">Event</a>
-    <a href="User.html" class="btn button">User</a>
-    <a href=""></a>
-    <a href=""></a>
-    <a href=""></a>
+    <div class="card-me">
+      <div class="overlay">
+        <img src="/frontend/img/mcs.png" alt="Logo" class="logo" />
+        <h1 class="title">Admin</h1>
+        <h2 class="subtitle">Welcome to the Admin Page</h2>
+        <p class="info">Manage your application with ease.</p>
+        <p class="quote">"Empowering you to take control."</p>
+      <div class="overlay">
+        <p class="title">Menu all event</p>
+        <a href="event.html" class="btn button">Event</a>
+        <a href="User.html" class="btn button">User</a>
+        <a href=""></a>
+        <a href="DashboardUserVote.html" class="btn button">Dashboard User Vote</a>
+        <a href="DashboardPreview.html" class="btn button">Dashboard Preview</a>
+    </div>
   </body>
 </html>

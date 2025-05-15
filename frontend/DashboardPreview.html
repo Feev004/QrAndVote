@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Preview</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url("/frontend/img/844163_0.jpg") center center/cover
+          no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      .overlay {
+        background-color: rgba(255, 255, 255, 0.7);
+        width: 700px;
+        height: 600px;
+        padding: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .logo {
+        margin-bottom: 20px;
+      }
+      .logo img {
+        height: 100px;
+      }
+      .time-box {
+        position: absolute;
+        top: 20px;
+        right: 50px;
+        text-align: right;
+      }
+      .time-box .date {
+        font-size: 18px;
+      }
+      .time-box .time {
+        font-size: 36px;
+        font-weight: bold;
+      }
+      .big-number {
+        font-size: 150px;
+        color: #007bff;
+        margin: 20px 0 10px 0;
+      }
+      .description {
+        font-size: 20px;
+      }
+      .details {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 15px;
+        margin-top: 20px;
+        text-align: left;
+        display: inline-block;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay">
+      <div class="logo">
+        <img src="/frontend/img/Untitled-1.png" alt="MCS Logo" />
+        <img src="/frontend/img/mcs.png" alt="MCS Logo" />
+      </div>
+      <div class="time-box">
+        <div class="date" id="date"></div>
+        <div class="time" id="clock">07:00:01</div>
+      </div>
+      <div class="big-number" id="EMPRandom">99</div>
+      <div class="description">จำนวนผู้เข้าทำงาน</div>
+      <div class="details">
+        A อายุงาน 10-20 ปี : <span id="num1"></span> / 10 คน<br />
+        B : <span id="num2"></span> / 20 คน<br />
+        C : <span id="num3"></span> / 120 คน<br />
+        D : <span id="num4"></span> / 300 คน<br />
+        E : <span id="num5"></span> / 400 คน<br />
+        F : <span id="num6"></span> / 30 คน
+      </div>
+    </div>
+
+    <script>
+      // สร้างตัวแปร options สำหรับการตั้งค่าการแสดงผลวันที่
+      const options = { year: "numeric", month: "long", day: "numeric" };
+      const date = new Date().toLocaleDateString("th-TH", options);
+      document.getElementById("date").textContent = date;
+
+      // ฟังก์ชันสำหรับอัปเดตเวลา
+      function updateClock() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString("th-TH");
+        document.getElementById("clock").textContent = timeString;
+      }
+      setInterval(updateClock, 1000);
+      updateClock();
+
+      // ฟังก์ชันสำหรับสุ่มตัวเลข
+      function randnum1() {
+        const randomNumber = Math.floor(Math.random() * 10) + 1;
+        document.getElementById("num1").textContent = randomNumber;
+      }
+      randnum1();
+
+      function randnum2() {
+        const randomNumber = Math.floor(Math.random() * 20) + 1;
+        document.getElementById("num2").textContent = randomNumber;
+      }
+      randnum2();
+
+      function randnum3() {
+        const randomNumber = Math.floor(Math.random() * 120) + 1;
+        document.getElementById("num3").textContent = randomNumber;
+      }
+      randnum3();
+
+      function randnum4() {
+        const randomNumber = Math.floor(Math.random() * 300) + 1;
+        document.getElementById("num4").textContent = randomNumber;
+      }
+      randnum4();
+
+      function randnum5() {
+        const randomNumber = Math.floor(Math.random() * 400) + 1;
+        document.getElementById("num5").textContent = randomNumber;
+      }
+      randnum5();
+      function randnum6() {
+        const randomNumber = Math.floor(Math.random() * 30) + 1;
+        document.getElementById("num6").textContent = randomNumber;
+      }
+      randnum6();
+
+      // ฟังก์ชันสำหรับสุ่มตัวเลขรวม
+      // คำนวณผลรวมของตัวเลขที่สุ่มได้
+      let sumNumber =
+        parseInt(document.getElementById("num1").textContent) +
+        parseInt(document.getElementById("num2").textContent) +
+        parseInt(document.getElementById("num3").textContent) +
+        parseInt(document.getElementById("num4").textContent) +
+        parseInt(document.getElementById("num5").textContent) +
+        parseInt(document.getElementById("num6").textContent);
+
+        // ฟังก์ชันสุ่มตัวเลข ของพนักงานทั้งหมดที่เข้าร่วมงาน
+      function random() {
+        const randomNumber = Math.floor(Math.random() * sumNumber) + 1;
+        console.log(sumNumber);
+        console.log("Random Number:", randomNumber);
+        document.getElementById("EMPRandom").textContent = randomNumber;
+      }
+      // เรียกฟังก์ชันสุ่มตัวเลขตอนเริ่มโหลดหน้า
+      // หรือจะสุ่มใหม่ทุก 5 วินาที
+      setInterval(random, 1000);
+      random();
+    </script>
+  </body>
+</html>
