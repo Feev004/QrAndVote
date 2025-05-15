@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Singer of the Year</title>
+    <title>Dashboard User Vote</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <style>
       body {
@@ -88,7 +88,7 @@
       .quote {
         margin-top: 20px;
         color: #262262;
-        font-size: 14px;
+        font-size: 36px;
         line-height: 1.4;
       }
       .row-me {
@@ -126,98 +126,64 @@
   <body>
     <div class="container px-4 py-5" id="featured-3">
       <h2 class="pb-2 border-bottom text-color-me">Singer of the Year</h2>
-      <div class="card-me row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="card-me row-me g-4 py-5 row-cols-1 row-cols-lg-3">
         <div class="feature col text-center">
-          <div class="">
-            <img src="/frontend/img/pp.jpg" alt="img" class="img55" />
+          <div class="overlayBox">
+            <img src="/frontend/img/pp.jpg" alt="img" class="img55" id="img" />
           </div>
           <h3 class="fs-2 text-body-emphasis">few</h3>
-          <a href="UserVoteWhoAreHe.html" class="button btn btn-primary"> Vote </a>
+          <h4>คะแนน : <span id="num1"></span></h4>
         </div>
         <div class="feature col text-center">
-          <div class="">
+          <div class="overlayBox">
             <img
               src="https://i.pinimg.com/236x/a3/53/5c/a3535c35feab16c8d768921a7b43893b.jpg"
               alt=""
               class="img55"
+              id="img2"
             />
           </div>
           <h3 class="fs-2 text-body-emphasis">few2</h3>
-          <a href="UserVoteWhoAreHe.html" class="button btn btn-primary"> Vote </a>
+          <h4>คะแนน : <span id="num2"></span></h4>
         </div>
         <div class="feature col text-center">
-          <div class=""></div>
+          <div class="overlayBox"></div>
           <img
             src="https://scontent.fbkk5-8.fna.fbcdn.net/v/t1.15752-9/257932028_898720947434545_3904082265459623298_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=106&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeEXNinV86HbNsMegQKhjeb2YHRFxmTfu_xgdEXGZN-7_De6ND-8wui1clg7NdDinUfBTP5-XRivAObri1CgeawO&_nc_ohc=xpsk0WyRhYAQ7kNvwH9pLh2&_nc_oc=AdnVZ03ETMq1hCK3qbFGPdTNcvdPisFTHmt344RxwT9O6r7bQaesk-bUEMEDU2Pl8KE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fbkk5-8.fna&oh=03_Q7cD2QG2F9wFE9ddN-qSopyA5M1kzE6BBXmpU2N2UHaxZSoVvw&oe=6849426D"
             alt=""
             class="img55"
+            id="img3"
           />
           <h3 class="fs-2 text-body-emphasis">few3</h3>
-          <a href="UserVoteWhoAreHe.html" class="button btn btn-primary "> Vote </a>
+          <h4>คะแนน : <span id="num3"></span></h4>
         </div>
-        <!-- <canvas id="myChart" width="400" height="200"></canvas> -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>
-          // กำหนดข้อมูลเริ่มต้น
-          let randomNumber = Math.floor(Math.random() * 870) + 1;
-          let randomNumber2 = Math.floor(Math.random() * 870) + 1;
-          let randomNumber3 = Math.floor(Math.random() * 870) + 1;
-
-          let test1 = "feev";
-        
-          const ctx = document.getElementById("myChart").getContext("2d");
-          const myChart = new Chart(ctx, {
-            type: "bar",
-            data: {
-              labels: [test1, "few2", "few3"],
-              datasets: [
-                {
-                  label: "ผลโหวต",
-                  data: [randomNumber, randomNumber2, randomNumber3],
-                  backgroundColor: "rgba(54, 162, 235, 0.5)",
-                  borderColor: "rgba(54, 162, 235, 1)",
-                  borderWidth: 1,
-                },
-              ],
-            },
-            options: {
-              indexAxis: "y",
-              responsive: true,
-              scales: {
-                x: {
-                  beginAtZero: true,
-                },
-              },
-            },
-          });
-        
-          // ฟังก์ชันสำหรับสุ่มและอัพเดทข้อมูล
-          function updateData() {
-            randomNumber = Math.floor(Math.random() * 870) + 1;
-            randomNumber2 = Math.floor(Math.random() * 870) + 1;
-            randomNumber3 = Math.floor(Math.random() * 870) + 1;
-        
-            const rawData = [
-              { label: "few", value: randomNumber },
-              { label: "few2", value: randomNumber2 },
-              { label: "few3", value: randomNumber3 },
+          window.onload = function () {
+            const singers = [
+              { name: "few", img: "/frontend/img/pp.jpg", score: Math.floor(Math.random() * 870) + 1 },
+              { name: "few2", img: "https://i.pinimg.com/236x/a3/53/5c/a3535c35feab16c8d768921a7b43893b.jpg", score: Math.floor(Math.random() * 870) + 1 },
+              { name: "few3", img: "https://scontent.fbkk5-8.fna.fbcdn.net/v/t1.15752-9/257932028_898720947434545_3904082265459623298_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=106&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeEXNinV86HbNsMegQKhjeb2YHRFxmTfu_xgdEXGZN-7_De6ND-8wui1clg7NdDinUfBTP5-XRivAObri1CgeawO&_nc_ohc=xpsk0WyRhYAQ7kNvwH9pLh2&_nc_oc=AdnVZ03ETMq1hCK3qbFGPdTNcvdPisFTHmt344RxwT9O6r7bQaesk-bUEMEDU2Pl8KE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fbkk5-8.fna&oh=03_Q7cD2QG2F9wFE9ddN-qSopyA5M1kzE6BBXmpU2N2UHaxZSoVvw&oe=6849426D", score: Math.floor(Math.random() * 870) + 1 },
             ];
         
-            // เรียงใหม่ทุกครั้ง
-            rawData.sort((a, b) => b.value - a.value);
+            singers.sort((a, b) => b.score - a.score);
         
-            // อัพเดทข้อมูล Chart
-            myChart.data.labels = rawData.map((item) => item.label);
-            myChart.data.datasets[0].data = rawData.map((item) => item.value);
-            myChart.update();
-          }
-        
-          // เรียกทุก 1 วินาที
-          setInterval(updateData, 5000);
-        </script> -->
+            const container = document.querySelector(".card-me");
+            container.innerHTML = singers.map(
+              (singer) => `
+                <div class="feature col text-center">
+                  <div class="overlayBox">
+                    <img src="${singer.img}" alt="${singer.name}" class="img55" />
+                  </div>
+                  <h3 class="fs-2 text-body-emphasis">${singer.name}</h3>
+                  <h4>คะแนน : ${singer.score}</h4>
+                </div>
+              `
+            ).join("");
+          };
+        </script>   
       </div>
     </div>
-    <div class="text-center container ">
+    <div class="container text-center">
       <a href="User.html" class="button btn">back</a>
     </div>
   </body>

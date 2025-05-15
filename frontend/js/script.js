@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     const scanner = new Html5Qrcode("scanner");
-    const resultInput = document.getElementById("result");
-    const stopButton = document.getElementById("stopButton");
     const clearButton = document.getElementById("clearButton");
     const loginButton = document.getElementById("login");
 
@@ -34,17 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    startScanner(); // Start scanning automatically on page load
-
-    // stopButton.addEventListener("click", () => {
-    //     if (isScanning) {
-    //         scanner.stop().then(() => {
-    //             isScanning = false;
-    //         }).catch((err) => {
-    //             console.error("Error stopping scanner:", err);
-    //         });
-    //     }
-    // });
+    startScanner();
 
     clearButton.addEventListener("click", () => {
         resultInput.value = "";
@@ -57,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loginButton.addEventListener("click", () => {
         const result = resultInput.value;
         if (result) {
-            window.location.href = `User.html?data=${encodeURIComponent(result)}`;
+            window.location.href = `staff.html?data=${encodeURIComponent(result)}`;
         } else {
             alert("กรุณาสแกน QR Code ก่อน");
         }

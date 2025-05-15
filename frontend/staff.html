@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/frontend/css/style.css" />
+    <script src="/frontend/js/html5-qrcode.min.js"></script>
+    <title>Staff</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url("/frontend/img/844163_0.jpg") center center/cover
+          no-repeat;
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        height: 100vh;
+      }
+      .card {
+        position: relative;
+        /* width: 375px; */
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-4 card">
+      <h2>Admin Management</h2>
+
+      <form id="userForm" class="mb-4">
+        <input type="hidden" id="userId" />
+      </form>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="text-center">No.</th>
+            <th>Name Event</th>
+            <th class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="userTable"></tbody>
+      </table>
+      <script src="./js/staff.js"></script>
+    </div>
+  </body>
+</html>

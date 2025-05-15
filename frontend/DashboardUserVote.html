@@ -16,7 +16,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vb;
+        height: 100%;
       }
 
       .card-me {
@@ -122,8 +122,16 @@
       .text-color-me {
         color: #ffffff;
       }
+
+      .graff {
+        display: flex;
+        width: 100%;
+        height: 400px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      }
     </style>
-    ```
   </head>
   <body>
     <div class="container px-4 py-5" id="featured-3">
@@ -131,11 +139,10 @@
       <div class="card-me row g-4 py-5 row-cols-1 row-cols-lg-3">
         <div class="feature col">
           <div class="overlayBox">
-            <img src="/frontend/img/pp.jpg" alt="img" class="img55" />
+            <img src="/frontend/img/pp.jpg" alt="img" class="img55" id="img" />
           </div>
           <h3 class="fs-2 text-body-emphasis">few</h3>
           <h4>คะแนน : <span id="num1"></span></h4>
-          <!-- <a href="#" class="button btn btn-primary"> Vote </a> -->
         </div>
         <div class="feature col">
           <div class="overlayBox">
@@ -143,11 +150,11 @@
               src="https://i.pinimg.com/236x/a3/53/5c/a3535c35feab16c8d768921a7b43893b.jpg"
               alt=""
               class="img55"
+              id="img2"
             />
           </div>
           <h3 class="fs-2 text-body-emphasis">few2</h3>
           <h4>คะแนน : <span id="num2"></span></h4>
-          <!-- <a href="#" class="button btn btn-primary"> Vote </a> -->
         </div>
         <div class="feature col">
           <div class="overlayBox"></div>
@@ -155,20 +162,30 @@
             src="https://scontent.fbkk5-8.fna.fbcdn.net/v/t1.15752-9/257932028_898720947434545_3904082265459623298_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=106&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeEXNinV86HbNsMegQKhjeb2YHRFxmTfu_xgdEXGZN-7_De6ND-8wui1clg7NdDinUfBTP5-XRivAObri1CgeawO&_nc_ohc=xpsk0WyRhYAQ7kNvwH9pLh2&_nc_oc=AdnVZ03ETMq1hCK3qbFGPdTNcvdPisFTHmt344RxwT9O6r7bQaesk-bUEMEDU2Pl8KE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fbkk5-8.fna&oh=03_Q7cD2QG2F9wFE9ddN-qSopyA5M1kzE6BBXmpU2N2UHaxZSoVvw&oe=6849426D"
             alt=""
             class="img55"
+            id="img3"
           />
           <h3 class="fs-2 text-body-emphasis">few3</h3>
           <h4>คะแนน : <span id="num3"></span></h4>
-          <!-- <a href="#" class="button btn btn-primary"> Vote </a> -->
         </div>
         <div></div>
         <div class="text-center">
           <button id="stopBtn" class="btn button">Stop moving</button>
         </div>
         <div class="text-center">
-          <button id="sortBtn" class="button" onclick="window.location.href='DashboardUserVoteWhoAreHe.html'">Overlapping singers</button>
+          <button
+            id="sortBtn"
+            class="button"
+            onclick="window.location.href='DashboardUserVoteWhoAreHe copy.html'"
+          >
+            Overlapping singers
+          </button>
         </div>
+        <!-- <div class="graff"></div> -->
+
+        <!-- <canvas id="imgChart" width="400" height="200" class="graff"></canvas> -->
         <canvas id="myChart" width="400" height="200"></canvas>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
         <script>
           function randnum1() {
             const randomNumber = Math.floor(Math.random() * 870) + 1;
@@ -212,11 +229,97 @@
             },
           });
 
+          // *******************************************************************************************************************
+          // สมมติฟังก์ชันสุ่มคะแนน
+  //         function randnum1() {
+  //           return Math.floor(Math.random() * 1000);
+  //         }
+  //         function randnum2() {
+  //           return Math.floor(Math.random() * 1000);
+  //         }
+  //         function randnum3() {
+  //           return Math.floor(Math.random() * 1000);
+  //         }
+
+  //         let singers = [
+  //           {
+  //             name: "few",
+  //             img: "/frontend/img/pp.jpg",
+  //             score1: randnum1(),
+  //             score2: randnum2(),
+  //             score3: randnum3(),
+  //           },
+  //           {
+  //             name: "few2",
+  //             img: "https://i.pinimg.com/236x/a3/53/5c/a3535c35feab16c8d768921a7b43893b.jpg",
+  //             score1: randnum1(),
+  //             score2: randnum2(),
+  //             score3: randnum3(),
+  //           },
+  //           {
+  //             name: "few3",
+  //             img: "https://scontent.fbkk5-8.fna.fbcdn.net/v/t1.15752-9/257932028_898720947434545_3904082265459623298_n.jpg",
+  //             score1: randnum1(),
+  //             score2: randnum2(),
+  //             score3: randnum3(),
+  //           },
+  //         ];
+
+  //         // ฟังก์ชัน render นักร้อง + คะแนนสูงสุดจาก 3 ค่า
+  //         function renderSingers() {
+  //           // คำนวณคะแนนสูงสุดของแต่ละคนเก็บใน key 'score'
+  //           singers.forEach((singer) => {
+  //             singer.score = Math.max(
+  //               singer.score1 || 0,
+  //               singer.score2 || 0,
+  //               singer.score3 || 0
+  //             );
+  //           });
+
+  //           // เรียงตามคะแนน 'score' จากมากไปน้อย
+  //           singers.sort((a, b) => b.score - a.score);
+
+  //           const container = document.querySelector(".graff");
+  //           container.innerHTML = singers
+  //             .map(
+  //               (singer) => `
+  //   <div class="feature">
+  //     <img src="${singer.img}" alt="${singer.name}" class="img55" />
+  //     <h3>${singer.name}</h3>
+  //     <h4>คะแนน : ${singer.score}</h4>
+  //   </div>
+  // `
+  //             )
+  //             .join("");
+  //         }
+
+  //         // ฟังก์ชันอัพเดตคะแนนใหม่ทุกตัว
+  //         function updateData() {
+  //           singers.forEach((s) => {
+  //             s.score1 = randnum1();
+  //             s.score2 = randnum2();
+  //             s.score3 = randnum3();
+  //           });
+  //           renderSingers();
+  //         }
+
+          // เรียกครั้งแรก
+          // renderSingers();
+
+          // ******************************************************************************************************************
           let intervalId = setInterval(updateData, 1000);
           let isRunning = true;
           let isSorted = true;
 
           function updateData() {
+            let img = document.getElementById("img");
+            img.src = "/frontend/img/pp.jpg";
+            let img2 = document.getElementById("img2");
+            img2.src =
+              "https://i.pinimg.com/236x/a3/53/5c/a3535c35feab16c8d768921a7b43893b.jpg";
+            let img3 = document.getElementById("img3");
+            img3.src =
+              "https://scontent.fbkk5-8.fna.fbcdn.net/v/t1.15752-9/257932028_898720947434545_3904082265459623298_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=106&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeEXNinV86HbNsMegQKhjeb2YHRFxmTfu_xgdEXGZN-7_De6ND-8wui1clg7NdDinUfBTP5-XRivAObri1CgeawO&_nc_ohc=xpsk0WyRhYAQ7kNvwH9pLh2&_nc_oc=AdnVZ03ETMq1hCK3qbFGPdTNcvdPisFTHmt344RxwT9O6r7bQaesk-bUEMEDU2Pl8KE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fbkk5-8.fna&oh=03_Q7cD2QG2F9wFE9ddN-qSopyA5M1kzE6BBXmpU2N2UHaxZSoVvw&oe=6849426D";
             randomNumber = Math.floor(Math.random() * 870) + 1;
             document.getElementById("num1").textContent = randomNumber;
             randomNumber2 = Math.floor(Math.random() * 870) + 1;
@@ -244,7 +347,7 @@
               clearInterval(intervalId);
               document.getElementById("stopBtn").textContent = "Start moving";
             } else {
-              intervalId = setInterval(updateData, 1000);
+              intervalId = setInterval(updateData, 5000);
               document.getElementById("stopBtn").textContent = "Stop moving";
             }
             isRunning = !isRunning;
@@ -252,7 +355,5 @@
         </script>
       </div>
     </div>
-    <!-- <a href="User.html" class="button btn">back</a> -->
-    ```
   </body>
 </html>

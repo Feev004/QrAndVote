@@ -4,27 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <title>Admin</title>
+    <link rel="stylesheet" href="/frontend/css/style.css" />
+    <title>event</title>
+    <script src="/frontend/js/html5-qrcode.min.js"></script>
+
     <style>
       body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background: url("/frontend/img/test.jpg") center center/cover no-repeat;
+        background: url("/frontend/img/844163_0.jpg") center center/cover
+          no-repeat;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
       }
 
-      .card-me {
+      .card {
         position: relative;
         /* width: 375px; */
         border-radius: 10px;
         overflow: hidden;
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.5);
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         transition: transform 0.3s ease;
+      }
+
+      .center-me {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
 
       .overlay {
@@ -72,10 +82,10 @@
         background-color: #4a90e2;
         color: white;
         border: none;
-        border-radius: 9999px;
+        border-radius: 100px;
         cursor: pointer;
         font-size: 16px;
-        width: 80%;
+        width: 20%;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         transition: background-color 0.3s ease;
       }
@@ -87,52 +97,28 @@
       .quote {
         margin-top: 20px;
         color: #262262;
-        font-size: 14px;
+        font-size: 24px;
         line-height: 1.4;
-      }
-      .row-me {
-        --bs-gutter-x: 1.5rem;
-        --bs-gutter-y: 0;
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: calc(-1 * var(--bs-gutter-y));
-        margin-right: calc(-0.5 * var(--bs-gutter-x));
-        margin-left: calc(-0.5 * var(--bs-gutter-x));
-      }
-
-      .hitden-me {
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0);
-        transition: transform 0.3s ease;
-      }
-
-      .img55 {
-        width: 250px;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 10px;
-      }
-
-      .margin-me {
-        margin-top: 500px;
       }
     </style>
   </head>
   <body>
-    <div class="card-me">
-      <div class="overlay">
-        <img src="/frontend/img/mcs.png" alt="Logo" class="logo" />
-        <h1 class="title">Admin</h1>
-        <h2 class="subtitle">Welcome to the Admin Page</h2>
-        <p class="info">Manage your application with ease.</p>
-        <p class="quote">"Empowering you to take control."</p>
-      <div class="overlay">
-        <p class="title">Menu all event</p>
-        <a href="event.html" class="btn button">Event</a>
-        <a href="User.html" class="btn button">User</a>
-        <a href="event.html" class="btn button">staff</a>
-        <a href="DashboardUserVote.html" class="btn button">Dashboard User Vote</a>
-        <a href="DashboardPreview.html" class="btn button">Dashboard Preview</a>
+    <div class="container card">
+      <h1>QR Code Scanner User Chack in</h1>
+      <div id="scanner" style="width: 100%; height: 100%"></div>
+      <input
+        type="text"
+        id="resultInput"
+        placeholder="QR Result"
+        readonly
+        class="form-control my-2"
+      />
+
+      <div>
+        <button id="clearButton" class="btn btn-warning">ล้างข้อมูล</button>
+        <button id="login" class="btn btn-success">บันทึก</button>
+      </div>
     </div>
+    <script src="/frontend/js/staffChackUser.js"></script>
   </body>
 </html>
