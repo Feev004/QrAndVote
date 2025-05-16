@@ -9,17 +9,18 @@
       body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background: url("/frontend/img/844163_0.jpg") center center/cover
-          no-repeat;
+        background: url("/frontend/img/844163_0.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vb;
+
       }
 
       .card-me {
-        position: relative;
+        /* position: relative; */
         /* width: 375px; */
         border-radius: 10px;
         overflow: hidden;
@@ -119,14 +120,28 @@
       }
 
       .text-color-me {
-        color: #ffffff;
+        color: #000000;
+        font-weight: bold;
+        /* text-shadow:  1px 1px 5px #000000; */
+        /* -webkit-text-stroke: 1px #000000; */
+      }
+
+      .hr-color {
+        border: 1px solid #000000;
       }
     </style>
   </head>
   <body>
     <div class="container px-4 py-5" id="featured-3">
-      <h2 class="pb-2 border-bottom text-color-me">Singer of the Year</h2>
-      <div class="card-me row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="card-me">
+        <br>
+        <div class="row-cols-1 text-center">
+          <h2 class=" text-color-me">Singer of the Year</h2>
+        </div>
+        <div class="row-cols-1 text-center">
+          <h4 class="">Description</h2>
+        </div>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
         <div class="feature col text-center">
           <div class="">
             <img src="/frontend/img/pp.jpg" alt="img" class="img55" />
@@ -155,70 +170,12 @@
           <h3 class="fs-2 text-body-emphasis">few3</h3>
           <a href="UserVoteWhoAreHe.html" class="button btn btn-primary "> Vote </a>
         </div>
-        <!-- <canvas id="myChart" width="400" height="200"></canvas> -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script>
-          // กำหนดข้อมูลเริ่มต้น
-          let randomNumber = Math.floor(Math.random() * 870) + 1;
-          let randomNumber2 = Math.floor(Math.random() * 870) + 1;
-          let randomNumber3 = Math.floor(Math.random() * 870) + 1;
-
-          let test1 = "feev";
-        
-          const ctx = document.getElementById("myChart").getContext("2d");
-          const myChart = new Chart(ctx, {
-            type: "bar",
-            data: {
-              labels: [test1, "few2", "few3"],
-              datasets: [
-                {
-                  label: "ผลโหวต",
-                  data: [randomNumber, randomNumber2, randomNumber3],
-                  backgroundColor: "rgba(54, 162, 235, 0.5)",
-                  borderColor: "rgba(54, 162, 235, 1)",
-                  borderWidth: 1,
-                },
-              ],
-            },
-            options: {
-              indexAxis: "y",
-              responsive: true,
-              scales: {
-                x: {
-                  beginAtZero: true,
-                },
-              },
-            },
-          });
-        
-          // ฟังก์ชันสำหรับสุ่มและอัพเดทข้อมูล
-          function updateData() {
-            randomNumber = Math.floor(Math.random() * 870) + 1;
-            randomNumber2 = Math.floor(Math.random() * 870) + 1;
-            randomNumber3 = Math.floor(Math.random() * 870) + 1;
-        
-            const rawData = [
-              { label: "few", value: randomNumber },
-              { label: "few2", value: randomNumber2 },
-              { label: "few3", value: randomNumber3 },
-            ];
-        
-            // เรียงใหม่ทุกครั้ง
-            rawData.sort((a, b) => b.value - a.value);
-        
-            // อัพเดทข้อมูล Chart
-            myChart.data.labels = rawData.map((item) => item.label);
-            myChart.data.datasets[0].data = rawData.map((item) => item.value);
-            myChart.update();
-          }
-        
-          // เรียกทุก 1 วินาที
-          setInterval(updateData, 5000);
-        </script> -->
       </div>
+      <div class="text-center">
+        <a href="User.html" class="button btn">back</a>
+      </div>
+      <br/>
     </div>
-    <div class="text-center container ">
-      <a href="User.html" class="button btn">back</a>
-    </div>
+    
   </body>
 </html>

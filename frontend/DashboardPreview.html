@@ -108,35 +108,41 @@
       function randnum1() {
         const randomNumber = Math.floor(Math.random() * 10) + 1;
         document.getElementById("num1").textContent = randomNumber;
+        return randomNumber;
       }
       randnum1();
 
       function randnum2() {
         const randomNumber = Math.floor(Math.random() * 20) + 1;
         document.getElementById("num2").textContent = randomNumber;
+        return randomNumber;
       }
       randnum2();
 
       function randnum3() {
         const randomNumber = Math.floor(Math.random() * 120) + 1;
         document.getElementById("num3").textContent = randomNumber;
+        return randomNumber;
       }
       randnum3();
 
       function randnum4() {
         const randomNumber = Math.floor(Math.random() * 300) + 1;
         document.getElementById("num4").textContent = randomNumber;
+        return randomNumber;
       }
       randnum4();
 
       function randnum5() {
         const randomNumber = Math.floor(Math.random() * 400) + 1;
         document.getElementById("num5").textContent = randomNumber;
+        return randomNumber;
       }
       randnum5();
       function randnum6() {
         const randomNumber = Math.floor(Math.random() * 30) + 1;
         document.getElementById("num6").textContent = randomNumber;
+        return randomNumber;
       }
       randnum6();
 
@@ -150,17 +156,26 @@
         parseInt(document.getElementById("num5").textContent) +
         parseInt(document.getElementById("num6").textContent);
 
-        // ฟังก์ชันสุ่มตัวเลข ของพนักงานทั้งหมดที่เข้าร่วมงาน
+      // ฟังก์ชันสุ่มและแสดงผลตัวเลขทั้งหมด
       function random() {
-        const randomNumber = Math.floor(Math.random() * sumNumber) + 1;
-        console.log(sumNumber);
-        console.log("Random Number:", randomNumber);
-        document.getElementById("EMPRandom").textContent = randomNumber;
+        const num1 = randnum1();
+        const num2 = randnum2();
+        const num3 = randnum3();
+        const num4 = randnum4();
+        const num5 = randnum5();
+        const num6 = randnum6();
+
+        const sumNumber = num1 + num2 + num3 + num4 + num5 + num6;
+
+        console.log("Sum Number:", sumNumber);
+        document.getElementById("EMPRandom").textContent = sumNumber;
       }
-      // เรียกฟังก์ชันสุ่มตัวเลขตอนเริ่มโหลดหน้า
-      // หรือจะสุ่มใหม่ทุก 5 วินาที
-      setInterval(random, 1000);
+
+      // เรียกฟังก์ชันสุ่มทันทีเมื่อโหลดหน้า
       random();
+
+      // และสุ่มใหม่ทุก 1 วินาที
+      // setInterval(random, 1000);
     </script>
   </body>
 </html>

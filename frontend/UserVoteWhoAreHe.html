@@ -7,19 +7,19 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <style>
       body {
-        margin: 0;
+        margin: 10px;
         font-family: Arial, sans-serif;
-        background: url("/frontend/img/844163_0.jpg") center center/cover
-          no-repeat;
+        background: url("/frontend/img/844163_0.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vb;
       }
 
       .card-me {
-        position: relative;
+        /* position: relative; */
         /* width: 375px; */
         border-radius: 10px;
         overflow: hidden;
@@ -88,7 +88,7 @@
       .quote {
         margin-top: 20px;
         color: #262262;
-        font-size: 36px;
+        font-size: 14px;
         line-height: 1.4;
       }
       .row-me {
@@ -108,6 +108,7 @@
       }
 
       .img55 {
+        margin-top: 20px;
         width: 250px;
         height: 300px;
         object-fit: cover;
@@ -120,13 +121,26 @@
 
       .text-color-me {
         color: #ffffff;
+        font-weight: bold;
+        text-shadow:  1px 1px 5px #000000;
+        /* -webkit-text-stroke: 1px #000000; */
+      }
+
+      .hr-color {
+        border: 1px solid #000000;
       }
     </style>
   </head>
   <body>
     <div class="container px-4 py-5" id="featured-3">
-      <h2 class="pb-2 border-bottom text-color-me">Singer of the Year</h2>
-      <div class="card-me row-me g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="row-cols-1 text-center">
+        <h2 class=" text-color-me">Singer of the Year</h2>
+      </div>
+      <div class="row-cols-1 text-center text-color-me">
+        <h4 class="">Description</h2>
+      </div>
+      <div class="card-me">
+        <div class="card-me row-me g-4 py-5 row-cols-1 row-cols-lg-3 ">
         <div class="feature col text-center">
           <div class="overlayBox">
             <img src="/frontend/img/pp.jpg" alt="img" class="img55" id="img" />
@@ -186,5 +200,7 @@
     <div class="container text-center">
       <a href="User.html" class="button btn">back</a>
     </div>
+    <br/>
+    
   </body>
 </html>
